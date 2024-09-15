@@ -25,7 +25,7 @@ Argonis is an innovative, open-source knowledge management system designed to un
 
 ## Architecture
 
-KnowledgeNexus employs a modular, scalable architecture designed for performance and flexibility.
+Argonis employs a modular, scalable architecture designed for performance and flexibility.
 
 ```mermaid
 graph TD
