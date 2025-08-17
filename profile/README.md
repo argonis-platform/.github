@@ -1,49 +1,33 @@
-# Argonis: Open-Source Vulnerability Scanner 🔍
+# 🚀 Argonis
 
-## Project Overview
-Argonis is an open-source vulnerability scanner designed to detect and report security vulnerabilities within IT systems and applications. Its main goal is to provide businesses and developers with a powerful and flexible tool to scan their resources, generate reports, and manage alerts in a centralized way.
+> **The unified knowledge platform that bridges the gap between document management, wiki collaboration, file sharing, and team workspaces.**
+Argonis is a **modern, self-hosted platform** that combines document management, wiki collaboration, and file synchronization into a single, scalable solution. Built for both tech-savvy individuals and enterprise environments.
 
-## Key Features (MVP)
-- **Vulnerability Scanning:** A built-in scanning engine capable of detecting a wide range of vulnerabilities in systems and applications.
-- **Asynchronous Task Management:** Leverages Celery and RabbitMQ to orchestrate background scans and tasks without affecting system performance.
-- **Centralized Results Storage:** Securely stores scan results, users, and configurations in a PostgreSQL database.
-- **Elasticsearch Integration:** Provides fast indexing of vulnerabilities and scan results for efficient search and analysis.
-- **Notification System:** Generates and sends alerts via email, webhook, or other configured channels when critical vulnerabilities are detected.
-- **Report Generation:** Automatically creates scan reports in various formats (PDF, JSON) for easy tracking of results.
-- **API Authentication:** Robust authentication management using OAuth or JWT to secure access to resources and results.
+## Why Argonis?
 
-## Deployment and Availability 
-- **Self-hosted:** Designed for on-premises or private cloud deployment in enterprise environments. 
-- **Open Source:** Free and open for community contributions. 
-- **Flexible Deployment Options:**
-  - Standard installer for traditional setups.
-  - Docker container provided for easy deployment and scaling (Kubernetes-friendly).
+Tired of switching between **file storage**, **wiki**, and **document management** tools? Argonis combines them into **one self-hosted platform**.
+**Document management** with modern classification. **Wiki collaboration** for knowledge building. **File sync** across desktop and mobile. **All in one place**, on your infrastructure.
+
+## Features
+
+| Feature | Status | Description |
+|---------|--------|-------------|
+| **Core Backend** | ✅ MVP | GraphQL API, multi-workspace architecture, unified document/file/folder system |
+| **Web Client** | ✅ MVP | React interface with real-time updates, modern UI components |
+| **Document Types** | ✅ MVP | Markdown documents + binary files, version control, preview system |
+| **Access Control** | ✅ MVP | Granular permissions, team roles, guest sharing with expiration |
+| **Search & Organization** | ✅ MVP | Full-text search, tagging system, activity logs and audit trails |
+| **Real-time Collaboration** | 🔄 Planned | Live document editing, comment threads, cursor tracking |
+| **Content Processing** | 🔄 Planned | Auto-classification, semantic search, document summaries |
+| **Desktop Sync** | 🔄 Planned | Cross-platform clients (Windows/macOS/Linux) with offline support |
+| **Mobile Apps** | 🔄 Planned | iOS/Android apps with offline caching and conflict resolution |
+| **Advanced Auth** | 🔄 Planned | LDAP/SAML integration, SSO providers, multi-factor authentication |
+| **Workflow Engine** | 🔄 Planned | Review processes, approval workflows, automated actions |
+| **API Extensions** | 🔄 Planned | Webhooks, custom metadata fields, third-party integrations |
+| **Analytics** | 🔄 Planned | Usage dashboard, content insights, compliance reporting |
 
 ## Architecture
-Argonis employs a modular, scalable architecture designed for flexibility and performance. It connects various components to manage vulnerability scanning, task orchestration, and reporting.
 
-![Architecture drawio](https://github.com/user-attachments/assets/27fdaa6c-c378-466a-afba-af2a1b445f69)
-
-## Workflow
-- **Scanning:**
-Users trigger scans manually via the API or set up scheduled scans.
-Results are indexed in PostgreSQL and Elasticsearch for fast search and processing.
-- **Task Management:**
-Celery Workers handle scans in the background, orchestrated by RabbitMQ to ensure smooth execution even at large scale.
-- **Report Generation:**
-Upon scan completion, detailed reports are automatically generated and can be downloaded or accessed through the API.
-- **Notifications:**
-When critical vulnerabilities are detected, users are notified via email, webhook, or other configured channels.
-- **Data Analysis:**
-Elasticsearch enables quick search and analysis of scan results to facilitate the review of vulnerabilities.
-
-## Roadmap
-
-### Immediate Post-MVP Plans:
-- **Enhanced Dashboard:** Implement an interactive dashboard for visualizing vulnerability trends.
-- **Scheduler Integration:** Add the ability to schedule automatic scans with specific configurations.
-
-### Future Enhancements:
-- **External Vulnerability Feeds:** Integrate with external databases (CVE, NVD) to enrich scan results.
-- **Machine Learning Insights:** Implement machine learning models to automatically classify vulnerabilities by severity.
-- **Integration with CI/CD Tools:** Connect Argonis with CI/CD pipelines to automate scans during deployments.
+**Backend Services:** Django 5 core with **GraphQL API** (graphene), **PostgreSQL** primary database, **Redis** for caching and real-time features, **MinIO** S3-compatible storage, **Celery** background processing.
+**Client Applications:** **React 18 + Vite** web client with shadcn/ui, **Tauri** desktop sync clients, **React Native** mobile apps with offline support.
+**Infrastructure:** **Docker** containerization, **Kubernetes** deployment manifests, **Traefik** reverse proxy and load balancer.
